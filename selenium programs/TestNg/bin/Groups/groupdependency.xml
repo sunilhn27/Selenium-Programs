@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="suite">
+	<test name="test1">
+		<groups>
+        <define name="execute" >
+			<include name="A" />
+			<include name="D" />
+			<include name="F" />
+			</define>
+
+				<define name="notexecute" >
+
+				<include name="A" />
+				<include name="D" />
+				<include name="F" />
+
+			</define>
+			
+			<run>
+				<include name="execute" />
+				<exclude name="notexecute" />
+			</run>
+
+
+		</groups>
+		<classes>
+			<class name="Groups.groupdependency" />
+		</classes>
+	</test>
+</suite>

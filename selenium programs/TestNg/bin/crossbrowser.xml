@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" >
+  <test name="Test">
+  <parameters>
+  <parameter name="browser" value="1"/>
+  </parameters>
+    <classes>
+      <class name="TestNgorg.crossbrowser"/>
+    </classes>
+  </test> >
+  
+  <test name="Test1">
+  <parameters>
+  <parameter name="browser" value="2"/>
+  </parameters>
+    <classes>
+      <class name="TestNgorg.crossbrowser"/>
+    </classes>
+  </test> 
+  
+  
+   <test name="Test2">
+   <parameters>
+  <parameter name="browser" value="3"/>
+  </parameters>
+    <classes>
+      <class name="TestNgorg.crossbrowser"/>
+    </classes>
+  </test> 
+  
+</suite> 

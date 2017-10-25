@@ -1,0 +1,29 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class action {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();
+		d.get("https://a2plcpnl0757.prod.iad2.secureserver.net:2096");
+		WebElement user=d.findElement(By.id("user"));
+		WebElement pwd=d.findElement(By.id("pass"));
+		WebElement login=d.findElement(By.id("login_submit"));
+		Actions a=new Actions(d);
+		a.moveToElement(user).sendKeys("sunilhn@htmltech.in");
+		a.moveToElement(pwd).click().sendKeys("sunil@065");
+		a.moveToElement(login).click();
+		a.build().perform();		
+		
+		
+		
+
+	}
+
+}

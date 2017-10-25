@@ -1,0 +1,48 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class jdbcupdate {
+
+	public static void main(String[] args) throws Exception {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter a student id");
+			int id = sc.nextInt();
+			System.out.println("enter a student name");
+			String name = sc.next();
+			name = "'" + name + "'";
+			System.out.println("enter a student address");
+			String address = sc.next();
+			address = "'" + address + "'";
+            System.out.println("enter condition");
+			int id1 = sc.nextInt();
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "root");
+			st = con.createStatement();
+            int i = st.executeUpdate("update employee set sname=" + name + ",address=" + address + "where id=" + id1);
+			rs = st.executeQuery("select * from employee");
+			while (rs.next()) {
+				System.out.println(rs.getString(1) + "    " + rs.getString(2) + "    " + rs.getString(3));
+			}
+			if (i != 0) {
+				System.out.println(i + "row affected");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+
+			st.close();
+			con.close();
+		}
+
+	}
+}

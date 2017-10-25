@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+
+	<test name="Test">
+		<parameter name="para" value="su6nil" />
+		<classes>
+
+
+			<class name="TestNgorg.optional" />
+
+
+		</classes>
+	</test>
+	<test name="Test1">
+
+		<classes>
+
+
+			<class name="TestNgorg.optional" />
+
+
+		</classes>
+	</test>
+</suite> 

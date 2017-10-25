@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<listners>
+<listner class-name="org.uncommons.reportng.HTMLReporter"/>
+<listner class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listners>
+ <test name="test1">
+      <classes>
+         <class name="TestNgorg.dataprovider" />
+      </classes>
+       </test>
+</suite>

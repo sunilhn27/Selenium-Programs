@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="user" value="selenmium"/>
+  <test name="Test(failed)">
+    <parameter name="user" value="selenmium"/>
+    <classes>
+      <class name="TestNgorg.para3">
+        <methods>
+          <include name="uname"/>
+        </methods>
+      </class> <!-- TestNgorg.para3 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

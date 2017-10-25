@@ -1,0 +1,72 @@
+package listeners1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class pomelements {
+
+	WebDriver d;
+
+	//By RegisterName = By.className("view-apply-button font-20 button_orange_sumbit");
+	By FirstName = By.id("firstname");
+	By Lname = By.id("lastname");
+	By Email = By.id("email");
+	By password = By.id("pass");
+	By Phno = By.id("mobile");
+
+	@Test(priority = 0)
+
+	public void launch() {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		
+
+	}
+
+	@Test(priority = 1)
+	@Parameters({ "FirstName", "Lname", "Email", "password", "Phno", })
+	public void passingdata(String fname, String lname, String email, String pass, String phno)	throws Exception {
+		d.get("https://www.freshersworld.com/user/login");
+		d.findElement(By.xpath("//*[@class='margin-top-20']/a")).click();
+		d.findElement(FirstName).sendKeys(fname);
+		d.findElement(Lname).sendKeys(lname);
+		d.findElement(Email).sendKeys(email);
+		d.findElement(password).sendKeys(pass);
+		d.findElement(Phno).sendKeys(phno);
+		WebElement wb = d.findElement(By.id("currentCity"));
+		Select s = new Select(wb);
+		s.selectByVisibleText("Bangalore");
+		WebElement wb1 = d.findElement(By.id("current_sublocation_id"));
+		Select s2 = new Select(wb1);
+		Thread.sleep(2000);
+		s2.selectByVisibleText("Bommanahalli");
+		WebElement wb2 = d.findElement(By.xpath(".//*[@id='course']"));
+		Select s3 = new Select(wb2);
+		s3.selectByVisibleText("BCA");
+		Thread.sleep(2000);
+		WebElement wb4 = d.findElement(By.id("passYear"));
+		Select s4 = new Select(wb4);
+		s4.selectByVisibleText("2015");
+		d.findElement(By.xpath(".//*[@id='hasWorkExp1']")).click();
+		WebElement firstfield = d.findElement(By.xpath(".//*[@id='first']"));
+		Select s5 = new Select(firstfield);
+		s5.selectByVisibleText("IT Software-Engineer");
+ 	
+	
+	
+	
+	
+	
+	
+	}
+
+	
+	
+}

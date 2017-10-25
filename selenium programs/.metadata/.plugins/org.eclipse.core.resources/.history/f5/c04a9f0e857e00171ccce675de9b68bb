@@ -1,0 +1,14 @@
+package handlingXl;
+
+import java.io.FileInputStream;
+
+public class xl1 {
+	
+
+	
+	
+	public static void main(String[] args) {
+		File f=new File("C:\Users\Sanddep B\Desktop\sunilxl.xlsx")
+		FileInputStream fs=new FileInputStream("")
+	}
+}

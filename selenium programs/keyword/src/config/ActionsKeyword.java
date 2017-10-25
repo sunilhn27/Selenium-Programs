@@ -1,0 +1,81 @@
+package config;
+
+import java.io.File;
+import java.util.Properties;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ActionsKeyword {
+	WebDriver d1;
+
+	public ActionsKeyword(WebDriver d1) {
+		this.d1 = d1;
+
+	}
+
+	public void perform(Properties p, String operation, String objectname, String objecttype, String value)
+			throws Exception {
+		System.out.println(" ");
+		switch (operation.toUpperCase()) {
+
+		case "LAUNCH":
+			System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+			d1 = new ChromeDriver();
+			break;
+		case "ENTERTEXT":
+			d1.findElement(this.getdata(p, objecttype, objectname)).sendKeys(value);
+			break;
+		case "NAVIGATE_URL":
+			d1.get(p.getProperty(value));
+			break;
+		case "CLICK":
+			d1.findElement(this.getdata(p, objecttype, objectname)).click();
+			String s = "Webmail - Main";
+			if (s.equalsIgnoreCase(d1.getTitle())) {
+				int i=0;
+				
+				TakesScreenshot sc = ((TakesScreenshot) d1);
+				File f = sc.getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(f, new File(
+						"C:\\Users\\Sanddep B\\Desktop\\screenshots\\" + i + ".png"));
+				i++;
+			}
+			break;
+		case "CLOSE":
+			d1.close();
+			break;
+
+		}
+
+	}
+
+	public By getdata(Properties p, String objecttype, String objectname) throws Exception {
+
+		if (objecttype.equalsIgnoreCase("Xpath")) {
+			return By.xpath(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("CSS")) {
+			return By.cssSelector(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("Link")) {
+			return By.linkText(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("partial LinkText")) {
+			return By.partialLinkText(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("Tagname")) {
+			return By.tagName(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("id")) {
+			return By.id(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("name")) {
+			return By.name(p.getProperty(objectname));
+		} else if (objecttype.equalsIgnoreCase("Classname")) {
+			return By.className(p.getProperty(objectname));
+		} else {
+			throw new Exception("wrong choice");
+		}
+	}
+}
+
+}

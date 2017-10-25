@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" >
+  <test name="Test">
+  <parameters>
+  <parameter name="browser" value="chrome"/>
+  </parameters>
+    <classes>
+      <class name="TestNgorg.dataprovider"/>
+    </classes>
+  </test> 
+  
+  <test name="Test1">
+  <parameters>
+  <parameter name="browser" value="ie"/>
+  </parameters>
+    <classes>
+      <class name="TestNgorg.dataprovider"/>
+    </classes>
+  </test> 
+  </suite>

@@ -1,0 +1,63 @@
+package keyworddriven;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class operation {
+
+	WebDriver d1;
+
+	public operation(WebDriver d1) {
+		this.d1 = d1;
+
+	}
+
+	public void perform(Properties p, String operation, String objectname, String objecttype, String value)
+			throws Exception {
+		System.out.println(" ");
+		switch (operation) {
+		case "ENTERTEXT":
+			d1.findElement(this.getdata(p, objecttype, objectname)).sendKeys(value);
+			break;
+		case "NAVIGATE_URL":
+			d1.get(p.getProperty(value));
+			break;
+		case "CLICK":
+			d1.findElement(this.getdata(p, objectname, objecttype)).click();
+		}
+
+	}
+
+	private By getdata(Properties p, String ObjectType, String objectname) throws Exception {
+
+		if (ObjectType.equalsIgnoreCase(p.getProperty("Xpath"))) {
+			return By.xpath(p.getProperty(objectname));
+		}
+		else if (ObjectType.equalsIgnoreCase("CSS")) {
+			return By.cssSelector(p.getProperty(objectname));
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("Link"))) {
+			return By.linkText(p.getProperty(objectname));
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("partial LinkText"))) {
+			return By.partialLinkText(objectname);
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("Tagname"))) {
+			return By.tagName(objectname);
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("id"))) {
+			return By.id(objectname);
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("name"))) {
+			return By.name(objectname);
+		}
+		else if (ObjectType.equalsIgnoreCase(p.getProperty("Classname"))) {
+			return By.className(objectname);
+		} 
+		else {
+			throw new Exception("wrong choice");
+		}
+	}
+}

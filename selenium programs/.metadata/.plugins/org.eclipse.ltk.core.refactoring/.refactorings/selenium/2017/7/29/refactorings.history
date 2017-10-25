@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;frames.javascript&apos; to &apos;scroll&apos;&#x0D;&#x0A;- Original project: &apos;selenium&apos;&#x0D;&#x0A;- Original element: &apos;frames.javascript&apos;&#x0D;&#x0A;- Renamed element: &apos;frames.scroll&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;javascript&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;frames{javascript.java[javascript" matchStrategy="1" name="scroll" qualified="false" references="true" similarDeclarations="false" stamp="1500555743250" textual="false" version="1.0"/>
+</session>

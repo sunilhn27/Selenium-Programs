@@ -1,0 +1,27 @@
+package datadriven1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class predef {
+
+	static WebDriver d;
+	public static WebElement user;
+	public static WebElement pass;
+	static WebElement login_submit;
+
+	public static void main(String[] args) throws Exception {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.get("https://a2plcpnl0757.prod.iad2.secureserver.net:2096/logout/?locale=en");
+		d.manage().window().maximize();
+		for (int i = 0; i < 4; i++) {
+			predefined1.getCellData(i, 1);
+			predefined1.setcelldata(i, 2, "pass");
+			predefined1.setcelldata(i, 2, "Fail");
+		}
+
+	}
+
+}

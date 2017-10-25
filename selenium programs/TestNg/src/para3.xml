@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<listners>
+<listner class-name="org.uncommons.reportng.HTMLReports"/>
+<listner class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listners>
+  <test name="Test">
+  <parameter name="user" value="selenmium"/>
+  
+    <classes>
+      <class name="TestNgorg.para3"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

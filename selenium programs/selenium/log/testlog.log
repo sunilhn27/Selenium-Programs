@@ -1,0 +1,43 @@
+2017-07-25 17:36:00,915 - log1 -INFO - launching the browser
+2017-07-25 17:36:02,194 - log1 -INFO - maximize the window
+2017-07-25 17:36:02,297 - log1 -INFO - closing the browser
+2017-07-25 17:38:20,550 - log1 -INFO - launching the browser
+2017-07-25 17:38:21,756 - log1 -INFO - maximize the window
+2017-07-25 17:38:23,868 - log1 -INFO - closing the browser
+2017-07-25 17:38:23,868 - log1 -FATAL - closinh
+2017-07-25 17:41:37,534 - log1 -INFO - launching the browser
+2017-07-25 17:41:38,749 - log1 -INFO - maximize the window
+2017-07-25 17:41:38,908 - log1 -INFO - closing the browser
+2017-07-25 17:42:14,432 - log1 -INFO - launching the browser
+2017-07-25 17:42:15,642 - log1 -INFO - maximize the window
+2017-07-25 17:42:17,723 - log1 -INFO - closing the browser
+2017-07-25 19:28:22,866 - log1 -INFO - Launching the browser
+2017-07-25 19:28:34,637 - log1 -INFO - going to specific URl
+2017-07-25 19:29:51,906 - log1 -INFO - Launching the browser
+2017-07-25 19:29:57,425 - log1 -INFO - going to specific URl
+2017-07-25 19:32:06,470 - log1 -INFO - Launching the browser
+2017-07-25 19:32:12,700 - log1 -INFO - going to specific URl
+2017-07-25 19:32:39,492 - log1 -INFO - Launching the browser
+2017-07-25 19:32:48,264 - log1 -INFO - going to specific URl
+2017-07-25 19:33:18,744 - log1 -INFO - Launching the browser
+2017-07-25 19:33:26,583 - log1 -INFO - going to specific URl
+2017-07-25 19:33:46,771 - log1 -INFO - logged in 
+2017-07-25 19:33:46,838 - log1 -INFO - logged out
+2017-07-25 19:40:19,338 - log1 -INFO - Launching the browser
+2017-07-25 19:40:58,084 - log1 -INFO - going to specific URl
+2017-07-25 19:41:18,158 - log1 -INFO - logged in 
+2017-07-25 19:41:18,211 - log1 -INFO - logged out
+2017-07-25 19:45:03,721 - log1 -INFO - Launching the browser
+2017-07-25 19:46:43,886 - log1 -INFO - going to specific URl
+2017-07-25 19:47:21,160 - log1 -INFO - logged in 
+2017-07-25 19:47:21,210 - log1 -INFO - logged out
+2001-01-01 03:36:19,372 - log1 -INFO - launching the browser
+2001-01-01 03:36:20,741 - log1 -INFO - maximize the window
+2001-01-01 03:36:21,468 - log1 -INFO - closing the browser
+2017-07-03 14:12:34,398 - log1 -INFO - launching the browser
+2017-07-03 14:12:35,772 - log1 -INFO - maximize the window
+2017-07-03 14:12:36,077 - log1 -INFO - closing the browser
+2017-07-28 18:03:35,507 - Screen -INFO - launching  the browser
+2017-07-28 18:03:41,747 - Screen -INFO - entering the user name
+2017-07-28 18:03:42,224 - Screen -INFO - entering the password
+2017-07-28 18:03:42,413 - Screen -INFO - login successfully

@@ -1,0 +1,11 @@
+<suite name="Suite1">
+<!-- <listeners>
+			<listener class-name="listeners1.lis1" />
+		</listeners> -->
+	<test name="test1">
+		<classes>
+			<class name="listeners1.lismethos" />
+		</classes>
+
+	</test>
+</suite>

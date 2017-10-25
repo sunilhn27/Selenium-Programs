@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite1">
+   <test name="test1">
+   <parameters>
+      <parameter name="FirstName" value="Sunil"/>
+      <parameter name="Lname" value="H N"/> 
+      <parameter name="Email" value="sunilhn@ghtmltech.in"/>
+      <parameter name="password" value="sunil123"/> 
+      <parameter name="Phno" value="9965485623"/>
+      </parameters>
+      <classes>
+         <class name="listeners1.parameterpomfw" />
+      </classes>
+      
+   </test>
+</suite>

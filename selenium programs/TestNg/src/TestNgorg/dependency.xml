@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="suite1">
+<groups>
+
+<run>
+<exclude name="C"/>
+</run>
+
+</groups>
+<test name="test1">
+<classes>
+<class name="TestNgorg.dependency"/>
+</classes>
+</test>
+</suite>

@@ -1,0 +1,44 @@
+package jdbc;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class jdbcinsert {
+
+	public static void main(String[] args) throws Exception {
+		Connection con = null;
+		Statement st = null;
+		// ResultSet rs = null;
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter a student id");
+			int id = sc.nextInt();
+			System.out.println("enter a student name");
+			String name = sc.next();
+			name = "'" + name + "'";
+			System.out.println("enter a student address");
+			String address = sc.next();
+			address = "'" + address + "'";
+
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "root");
+			jdbc j=new jdbc();
+			st = con.createStatement();
+			int i = st.executeUpdate("insert into employee values(" + id + "," + name + "," + address + ")");
+			if (i != 0) {
+				System.out.println(i +  "  row affected");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+
+			st.close();
+			con.close();
+		}
+
+	}
+}

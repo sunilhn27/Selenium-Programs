@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+	<test name="Test">
+		<parameters>
+			<parameter name="user" value="sunilhn@htmltech.in" />
+			<parameter name="pass" value="sunil@5" />
+			</parameters>
+			<classes>
+<class name="TestNgorg.parameter4" />
+				</classes>
+               </test>
+			
+			
+			
+			
+			<test name="Test1">
+		<parameters>
+			<parameter name="user" value="sunilhn@htmltech.in" />
+			<parameter name="pass" value="sunil@5" />
+			</parameters>
+			<classes>
+
+				<class name="TestNgorg.parameter4" />
+				    
+			</classes>
+               </test>
+            
+            
+               
+               
+               <test name="Test2">
+		<parameters>
+			<parameter name="user" value="sunilhn@htmltech.in" />
+			<parameter name="pass" value="sunil@5" />
+			</parameters>
+			<classes>
+              <class name="TestNgorg.parameter4" />
+				</classes>
+               </test>
+            
+            
+            
+            
+            
+               <test name="Test3">
+		<parameters>
+			<parameter name="user" value="sunilhn@htmltech.in" />
+			<parameter name="pass" value="sunil@065" />
+			</parameters>
+			<classes>
+               <class name="TestNgorg.parameter4" />
+				</classes>
+               </test>
+               </suite>

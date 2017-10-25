@@ -1,0 +1,26 @@
+package handlingXl;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class xl2 {
+
+	public static void main(String[] args) throws Exception {
+		File f=new File("C:\\Users\\Sanddep B\\Desktop\\sunilxl.xlsx");
+		FileInputStream fs=new FileInputStream(f);
+		XSSFWorkbook wb=new XSSFWorkbook(fs);
+		XSSFSheet sh=wb.getSheet("Sheet1");
+		XSSFRow row=sh.getRow(0);
+		XSSFCell cell=row.getCell(1);
+		String s = cell.toString();
+		System.out.println(s);
+		
+		
+	}
+	
+}

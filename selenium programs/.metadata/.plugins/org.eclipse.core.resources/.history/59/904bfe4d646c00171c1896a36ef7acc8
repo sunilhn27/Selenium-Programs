@@ -1,0 +1,21 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class selectmouse {
+
+	public static void main(String[] args) {
+		
+
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();
+	     WebElement wb=	d.findElement(By.id("selectable"));
+	     Actions a=new Actions(d);
+		 a.click()
+
+	}
+
+}

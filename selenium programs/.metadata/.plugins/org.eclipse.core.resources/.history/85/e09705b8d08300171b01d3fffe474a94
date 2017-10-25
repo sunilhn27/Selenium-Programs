@@ -1,0 +1,33 @@
+package datadriven1;
+
+import org.testng.annotations.*;
+
+public class object {
+
+	
+	
+	
+	@Test
+	public void data(String usr,String pwd){
+		System.out.println(usr);
+		System.out.println(pwd);
+	}
+
+
+
+	@DataProvider
+	public Object[][] excelsheet() throws Exception{
+		Object[][] obj=path("C:\\Users\\Sanddep B\\Desktop\\Book.xls");
+		return obj;
+		
+	}
+	
+	@Test
+	public  String [][]reading(String sheet ,String ){
+		
+	}
+	
+	
+	
+}
+

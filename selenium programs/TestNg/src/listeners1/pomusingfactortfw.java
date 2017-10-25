@@ -1,0 +1,22 @@
+package listeners1;
+
+import org.openqa.selenium.WebDriver;
+
+public class pomusingfactortfw {
+
+	WebDriver d;
+	private String FirstName;
+	private String Lname;
+	private String Email;
+	private String Password;
+	private String Phno;
+
+	public pomusingfactortfw(String FirstName1,String Lname)
+			{
+		this.FirstName=FirstName1;
+	//	this.Lname=
+		
+	}
+	
+	
+}

@@ -1,0 +1,27 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class newwindow {
+
+	public static void main(String[] args) {
+		
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();	
+		
+		d.get("http://www.seleniumeasy.com/");
+		WebElement wb=d.findElement(By.cssSelector("[href='/testng-tutorials']"));
+		Actions a=new Actions(d);
+		//a.contextClick(wb).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+		a.contextClick(wb).sendKeys(Keys.CONTROL).click();
+		a.build().perform();
+		a.contextClick(wb).build().perform();
+		a.sendKeys("W").build().perform();
+	}
+
+}

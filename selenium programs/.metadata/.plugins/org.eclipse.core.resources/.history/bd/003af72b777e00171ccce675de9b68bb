@@ -1,0 +1,44 @@
+package listeners1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class pomelements {
+
+	WebDriver d;
+
+	//By RegisterName = By.className("view-apply-button font-20 button_orange_sumbit");
+	By FirstName = By.id("firstname");
+	By Lname = By.id("lastname");
+	By Email = By.id("email");
+	By password = By.id("pass");
+	By Phno = By.id("mobile");
+
+	@Test(priority = 0)
+
+	public void launch() {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		
+
+	}
+
+	@Test(priority = 1)
+	@Parameters({ "FirstName", "Lname", "Email", "password", "Phno", })
+	public void passingdata(String fname, String lname, String email, String pass, String phno) {
+		d.get("https://www.freshersworld.com/user/login");
+		d.findElement(By.xpath("//*[@class='margin-top-20']/a"));
+		d.findElement(FirstName).sendKeys(fname);
+		d.findElement(Lname).sendKeys(lname);
+		d.findElement(Email).sendKeys(email);
+		d.findElement(password).sendKeys(pass);
+		d.findElement(Phno).sendKeys(phno);
+
+	}
+
+}

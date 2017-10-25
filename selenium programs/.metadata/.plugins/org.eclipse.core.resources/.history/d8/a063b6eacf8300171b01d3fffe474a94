@@ -1,0 +1,27 @@
+package datadriven1;
+
+import org.testng.annotations.*;
+
+public class object {
+
+	
+	
+	
+	@Test
+	public void enter(){
+		
+	}
+
+
+
+	@DataProvider
+	public Object[][] data(){
+		
+		
+		
+	}
+	
+	
+	
+}
+

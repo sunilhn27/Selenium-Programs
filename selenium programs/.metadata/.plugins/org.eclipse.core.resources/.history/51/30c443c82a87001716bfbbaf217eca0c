@@ -1,0 +1,34 @@
+package keyworddriven;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class mainmethod {
+
+	public static void main(String[] args) throws Exception {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();
+		
+		operation o=new operation(d);
+		object h=new object();
+		excelsetpath e=new excelsetpath();
+		e.setpath("C:\\Users\\Sanddep B\\Desktop", "keyword1.xls", "Sheet1");
+        int rowcount=excelsetpath.sh.getLastRowNum();
+        System.out.println(rowcount);
+        for(int i=1;i<=rowcount;i++)
+        {
+        	excelsetpath.row=excelsetpath.sh.getRow(i);	
+        	if(excelsetpath.row.getCell(0).toString().length()==0){
+        	
+        		System.out.println(excelsetpath.row.getCell(1).toString()+""+excelsetpath.row.getCell(2).toString()+""+excelsetpath.row.getCell(3).toString()+""+excelsetpath.row.getCell(4).toString());
+        	o.perform(h.p, excelsetpath.row.getCell(1).toString(), excelsetpath.row.getCell(2).toString(), excelsetpath.row.getCell(3).toString(), excelsetpath.row.getCell(4).toString());
+        	}
+        
+        else
+        {
+        	System.out.println("New testcas"+excelsetpath.row.getCell(0).toString()+"started");
+        }
+        }
+        }
+
+}

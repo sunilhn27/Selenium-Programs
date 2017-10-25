@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <parameter name="user" value="sunilhn@htmltech.in"/>
+  <parameter name="pass" value="sunil@065"/>
+  <test name="test1(failed)">
+    <parameter name="user" value="sunilhn@htmltech.in"/>
+    <parameter name="pass" value="sunil@065"/>
+    <classes>
+      <class name="TestNgorg.loginparameter">
+        <methods>
+          <include name="click"/>
+        </methods>
+      </class> <!-- TestNgorg.loginparameter -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

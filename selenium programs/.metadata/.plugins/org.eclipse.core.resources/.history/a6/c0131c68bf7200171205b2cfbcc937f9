@@ -1,0 +1,27 @@
+package windowhandle;
+
+import java.util.Set;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class window1 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();
+		d.get("http://www.monsterindia.com/");
+		String s=d.getWindowHandle();
+		Set<String> w=d.getWindowHandles();
+		for(String li:w){
+			System.out.println(li);
+			
+			System.out.println(s);
+			if(!(s.equals(li))){
+				d.switchTo().window(li)
+				d.close();
+			
+		}
+	}
+
+}

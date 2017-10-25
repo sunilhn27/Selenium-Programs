@@ -1,0 +1,71 @@
+package data;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class datelements {
+	File f;
+	FileInputStream fs;
+	FileOutputStream fos;
+	HSSFRow row;
+	HSSFCell cell;
+	HSSFSheet sh;
+	HSSFWorkbook wb;
+	WebDriver d;
+
+	@Test
+	public HSSFSheet settingpath() throws Exception {
+		File f = new File("C:\\Users\\Sanddep B\\Desktop\\blank.xls");
+		fs = new FileInputStream(f);
+		wb = new HSSFWorkbook(fs);
+		sh = wb.getSheet("Sheet1");
+		return sh;
+		
+		}
+	
+	
+	public void settingdata(int row1,int col1,String data) throws Exception{
+		row=sh.getRow(row1);
+		cell=row.getCell(col1);
+		cell.setCellValue(data);
+		fos=new FileOutputStream(f);
+		wb.write();
+	}
+	
+	public String gettingdata(int irow, int icol){
+		row=sh.getRow(irow);
+		cell=row.getCell(icol);
+		String dat=cell.toString();
+		return dat;
+		
+		
+	}
+	
+	@BeforeTest
+	public void launch() throws Exception{
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.get("https://a2plcpnl0757.prod.iad2.secureserver.net:2096/logout/?locale=en");
+		datelements d1=new datelements();
+		d1.settingpath();
+		for(int i=0;i<=4;i++){
+			d.findElement(By.id("user")).sendKeys(d1.gettingdata(i, 0));
+			d.findElement(By.id("pass")).sendKeys(d1.gettingdata(i, 1));
+		}
+	
+	}
+	}
+
+

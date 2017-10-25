@@ -1,0 +1,33 @@
+package listeners1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
+
+public class pomelements {
+
+WebDriver d;
+
+By RegisterName =By.xpath("//*[@class='margin-top-20']/a");
+By FirstName =By.id("firstname");
+By Lname =By.id("lastname");
+By Email =By.id("email");
+By password =By.id("pass");
+By Phno =By.id("mobile");
+
+
+@Test
+@Parameters({"RegisterName","FirstName","Lname","Email","password","Phno",})
+public void passingdata(String regno,String fname ,String lname,String email,String pass,String phno){
+	d.findElement(RegisterName).sendKeys(regno);
+	d.findElement(FirstName).sendKeys(fname);
+	d.findElement(Lname).sendKeys(lname);
+	d.findElement(Email).sendKeys(email);
+	d.findElement(password).sendKeys(pass);
+	d.findElement(Phno).sendKeys(phno);
+	
+	
+	
+	
+	
+}}

@@ -1,0 +1,35 @@
+package TestNgorg;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class asserts {
+static WebDriver d;
+	
+	@Test(priority = 1)
+	public void launch() {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.get("http://www.gcrit.com/build3/create_account.php");
+}
+
+	@Test(priority = 2)
+   public void data(){
+	   WebElement wb=d.findElement(By.name("country"));
+		 List<WebElement>drop=wb.findElements(By.tagName("option"));
+		 for(WebElement li:drop){
+			 String s=li.getText();
+			 System.out.println(s);
+			 org.testng.Assert.assertEquals(drop, li, "pass");
+			 System.out.println("finished");
+			 
+		 }
+   }}
+	
+   

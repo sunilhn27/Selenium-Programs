@@ -1,0 +1,55 @@
+package TestNgorg;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class dataprovider {
+
+	@AfterClass
+	@Test
+	public void close() {
+		d.close();
+	}
+
+	static WebDriver d;
+
+	@Test(priority = 1)
+	public void launch() {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.get("https://a2plcpnl0757.prod.iad2.secureserver.net:2096/logout/?locale=en");
+	}
+
+	@Test(priority = 2)
+	@DataProvider
+	public static Object[][] user() {
+		return new Object[][] { { "sunilhn@htmltech.in", "sunil@065" }, { "raju", "password2" },
+				{ "sagar", "31564646" }, { "sunilhn@htmltech.in", "sunil@065" } };
+
+	}
+
+	@Test(priority = 3, dataProvider = "user")
+	public void data(String user, String pass) throws InterruptedException {
+		d.findElement(By.id("user")).clear();
+		d.findElement(By.id("pass")).clear();
+		d.findElement(By.id("user")).sendKeys(user);
+		d.findElement(By.id("pass")).sendKeys(pass);
+		d.findElement(By.id("login_submit")).click();
+		Thread.sleep(5000);
+		String s = "Webmail Login";
+		String s1 = d.getTitle();
+		if (s1 != s) {
+			d.findElement(By.id("lnkHeaderLogout")).click();
+			
+		}
+		d.findElement(By.id("user")).clear();
+		d.findElement(By.id("pass")).clear();
+
+	}
+
+}

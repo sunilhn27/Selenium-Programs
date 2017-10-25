@@ -1,0 +1,27 @@
+package explicitwait;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ecwait2 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		ChromeDriver d = new ChromeDriver();
+		d.get("http://jqueryui.com/draggable/");
+		d.manage().window().maximize();
+		//WebElement framename = d.findElement(By.className("demo-frame"));
+		/*WebDriverWait w = new WebDriverWait(d, 10);
+		w.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.cssSelector("iframe[class='demo-frame']")));*/
+	d.switchTo().frame(0);
+		WebElement wb = d.findElement(By.cssSelector("#draggable"));
+		Actions a = new Actions(d);
+		a.dragAndDropBy(wb, 250, 250).build().perform();;
+
+	}
+
+}

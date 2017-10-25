@@ -1,0 +1,29 @@
+package listeners1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class captcha {
+	 WebDriver d;
+
+	@Test(priority = 1)
+	public void url() {
+		System.setProperty("webdriver.chrome.driver", "D:\\suniljar\\chromedriver.exe");
+		d = new ChromeDriver();
+		
+
+	}
+
+	@Test
+	public void cap() {
+		d.get("https://www.freshersworld.com/user/register?src=fwloginregbtn");
+		d.manage().window().maximize();
+		WebElement wb = d.findElement(By.id("captchaView"));
+		String s = wb.getText();
+		System.out.println(s);
+
+	}
+}
